@@ -370,7 +370,7 @@ export const projects: Project[] = [
 
   keyLearning:
     "Gained practical experience designing enterprise HR workflows, event-driven automation, SharePoint data models, scheduled automation, task orchestration and exception handling."
-}
+},
 
 {
   slug: "phishing-awareness-automation",

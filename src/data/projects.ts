@@ -271,62 +271,62 @@ export const projects: Project[] = [
   slug: "employee-onboarding-automation",
   title: "Employee Onboarding Workflow Automation",
   category: "Enterprise Automation",
-  status: "INDEPENDENT PROJECT",
+  status: "PROFESSIONAL",
 
   summary:
-    "A role-based employee onboarding automation system that coordinates HR, IT, and manager tasks from employee creation through onboarding completion.",
+    "An HR onboarding automation system that coordinates employee onboarding activities across HR, IT and managers through structured workflows, task tracking, reminders and escalation.",
 
   problem:
-    "Employee onboarding often requires HR, IT, and managers to coordinate multiple tasks such as account setup, equipment preparation, access requests, documentation, and orientation. Tracking these activities manually can lead to missed tasks, delayed actions, and poor visibility into onboarding progress.",
+    "Employee onboarding required HR, IT and managers to coordinate multiple activities such as account setup, equipment preparation, access requests, documentation and orientation. Tracking these activities manually made it difficult to maintain visibility and ensure tasks were completed on time.",
 
   solution:
-    "Built a workflow-driven onboarding system using Microsoft Forms, SharePoint and Power Automate. HR submits new employee information through a structured form, which triggers an automated workflow that creates the required onboarding tasks, assigns them to the appropriate teams, tracks completion status, sends reminders for pending tasks, and escalates overdue activities to HR.",
+    "Built a workflow-driven HR onboarding system using Microsoft Forms, SharePoint and Power Automate. HR submits employee information, which triggers an automated workflow that creates the required onboarding tasks, assigns them to the appropriate teams, tracks completion, sends reminders for pending activities and escalates overdue tasks to HR.",
 
   architecture: [
     {
-      label: "Employee Information",
+      label: "HR Employee Submission",
       detail:
-        "HR submits employee details such as name, department, role, manager, location and joining date through Microsoft Forms."
+        "HR provides employee details including name, department, role, manager, location and joining date."
     },
     {
       label: "Power Automate Trigger",
       detail:
-        "A new form submission automatically triggers the onboarding workflow."
+        "A new employee submission automatically starts the onboarding workflow."
     },
     {
-      label: "SharePoint Employee Record",
+      label: "Employee Data Storage",
       detail:
-        "Employee information is stored in a centralized SharePoint list for onboarding tracking."
+        "Employee information is stored in SharePoint as the centralized onboarding record."
     },
     {
       label: "Role-Based Task Creation",
       detail:
-        "The workflow identifies the employee role and creates the corresponding onboarding tasks."
+        "The workflow uses the employee's role to determine and create the required onboarding activities."
     },
     {
       label: "Task Assignment",
       detail:
-        "Tasks are assigned to HR, IT or the employee's manager based on task ownership."
+        "Tasks are automatically assigned to the responsible HR, IT or management personnel."
     },
     {
       label: "Task Tracking",
       detail:
-        "Each onboarding task maintains a status such as Pending, In Progress or Completed."
+        "Onboarding tasks are tracked with ownership, due dates and completion status."
     },
     {
-      label: "Reminder Workflow",
+      label: "Reminder Automation",
       detail:
-        "A scheduled Power Automate flow checks pending and approaching due tasks and sends automated reminders."
+        "Scheduled workflows identify pending tasks and send reminders to responsible team members."
     },
     {
       label: "Escalation",
       detail:
-        "Overdue tasks can be escalated to HR when they remain incomplete after the defined deadline."
+        "Tasks remaining incomplete after their due date can be escalated to HR for follow-up."
     },
     {
-      label: "Onboarding Completion",
+      label: "Completion Tracking",
       detail:
-        "When all required onboarding tasks are completed, the employee's onboarding status is marked as completed."
+        "The employee onboarding record is updated when the required onboarding activities are completed."
     }
   ],
 
@@ -338,9 +338,9 @@ export const projects: Project[] = [
   ],
 
   automationCapabilities: [
-    "Employee onboarding workflow automation",
-    "Role-based task generation",
-    "Task assignment",
+    "HR onboarding workflow automation",
+    "Role-based task creation",
+    "Automatic task assignment",
     "Due-date management",
     "Automated reminders",
     "Overdue task detection",
@@ -350,27 +350,27 @@ export const projects: Project[] = [
   ],
 
   engineeringChallenges: [
-    "Designing a reliable workflow across HR, IT and management teams",
-    "Creating reusable role-based onboarding task templates",
-    "Maintaining consistent employee and task relationships",
-    "Handling task due dates and completion states",
-    "Designing reminder and escalation conditions",
-    "Preventing duplicate onboarding task creation",
-    "Maintaining centralized visibility of onboarding progress"
+    "Designing a workflow connecting HR, IT and management activities",
+    "Creating reusable role-based onboarding task structures",
+    "Maintaining relationships between employees and their onboarding tasks",
+    "Handling task ownership and due dates",
+    "Designing reliable reminder and escalation conditions",
+    "Preventing duplicate task creation",
+    "Maintaining centralized visibility into onboarding progress"
   ],
 
   outcome:
-    "Created a centralized and repeatable onboarding workflow that automatically coordinates employee onboarding activities across HR, IT and management.",
+    "Automated the core employee onboarding workflow and provided HR with a centralized system for coordinating, tracking and monitoring onboarding activities.",
 
   impact:
-    "Reduced manual coordination involved in onboarding and provided HR with centralized visibility into task ownership, pending activities and overall onboarding progress.",
+    "Reduced manual coordination between HR, IT and managers while improving visibility into task ownership, pending activities and onboarding progress.",
 
   role:
-    "Designed and implemented the end-to-end onboarding workflow, including the SharePoint data structure, Power Automate flows, role-based task creation, notifications, reminders and escalation logic.",
+    "Designed and implemented the end-to-end HR onboarding automation, including the SharePoint data structure, Power Automate workflows, task generation, assignment, notifications, reminders and escalation logic.",
 
   keyLearning:
-    "Gained practical experience designing multi-step business workflows, event-driven automation, SharePoint-based data models, scheduled workflows, task orchestration and exception handling."
-},
+    "Gained practical experience designing enterprise HR workflows, event-driven automation, SharePoint data models, scheduled automation, task orchestration and exception handling."
+}
 
 {
   slug: "phishing-awareness-automation",

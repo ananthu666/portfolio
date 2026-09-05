@@ -267,160 +267,193 @@ export const projects: Project[] = [
       "Gained practical experience in enterprise data pipelines, business KPI processing, scheduled automation and turning operational data into management-level reporting.",
   },
 
-  {
-    slug: "m365-power-automate-workflows",
-    title: "Microsoft 365 & Power Automate Workflow Automation",
-    category: "Enterprise Automation",
-    status: "PROFESSIONAL",
+{
+  slug: "employee-onboarding-automation",
+  title: "Employee Onboarding Workflow Automation",
+  category: "Enterprise Automation",
+  status: "INDEPENDENT PROJECT",
 
-    summary:
-      "Business workflow automation using Microsoft 365 and Power Automate to connect applications, notifications and email processes.",
+  summary:
+    "A role-based employee onboarding automation system that coordinates HR, IT, and manager tasks from employee creation through onboarding completion.",
 
-    problem:
-      "Several business processes depended on manual handoffs, including notifications, email communication and movement of information between applications.",
+  problem:
+    "Employee onboarding often requires HR, IT, and managers to coordinate multiple tasks such as account setup, equipment preparation, access requests, documentation, and orientation. Tracking these activities manually can lead to missed tasks, delayed actions, and poor visibility into onboarding progress.",
 
-    solution:
-      "Designed and implemented Power Automate workflows that respond to business events, connect Microsoft 365 services and automate downstream notification and email processes.",
+  solution:
+    "Built a workflow-driven onboarding system using Microsoft Forms, SharePoint and Power Automate. HR submits new employee information through a structured form, which triggers an automated workflow that creates the required onboarding tasks, assigns them to the appropriate teams, tracks completion status, sends reminders for pending tasks, and escalates overdue activities to HR.",
 
-    architecture: [
-      {
-        label: "Business Event / Trigger",
-        detail: "Initiates the workflow",
-      },
-      {
-        label: "Power Automate Workflow",
-        detail: "Workflow orchestration and business logic",
-      },
-      {
-        label: "Microsoft 365 Services",
-        detail: "Connected enterprise applications",
-      },
-      {
-        label: "Data / Process Handoff",
-        detail: "Moves information to the next business step",
-      },
-      {
-        label: "Notification & Email Delivery",
-        detail: "Automated communication",
-      },
-    ],
+  architecture: [
+    {
+      label: "Employee Information",
+      detail:
+        "HR submits employee details such as name, department, role, manager, location and joining date through Microsoft Forms."
+    },
+    {
+      label: "Power Automate Trigger",
+      detail:
+        "A new form submission automatically triggers the onboarding workflow."
+    },
+    {
+      label: "SharePoint Employee Record",
+      detail:
+        "Employee information is stored in a centralized SharePoint list for onboarding tracking."
+    },
+    {
+      label: "Role-Based Task Creation",
+      detail:
+        "The workflow identifies the employee role and creates the corresponding onboarding tasks."
+    },
+    {
+      label: "Task Assignment",
+      detail:
+        "Tasks are assigned to HR, IT or the employee's manager based on task ownership."
+    },
+    {
+      label: "Task Tracking",
+      detail:
+        "Each onboarding task maintains a status such as Pending, In Progress or Completed."
+    },
+    {
+      label: "Reminder Workflow",
+      detail:
+        "A scheduled Power Automate flow checks pending and approaching due tasks and sends automated reminders."
+    },
+    {
+      label: "Escalation",
+      detail:
+        "Overdue tasks can be escalated to HR when they remain incomplete after the defined deadline."
+    },
+    {
+      label: "Onboarding Completion",
+      detail:
+        "When all required onboarding tasks are completed, the employee's onboarding status is marked as completed."
+    }
+  ],
 
-    technologies: [
-      "Power Automate",
-      "Microsoft 365",
-      "SharePoint",
-      "Webhooks",
-      "REST APIs",
-    ],
+  technologies: [
+    "Microsoft Forms",
+    "SharePoint",
+    "Power Automate",
+    "Microsoft 365"
+  ],
 
-    automationCapabilities: [
-      "Cross-application workflows",
-      "Event-driven automation",
-      "Microsoft 365 integration",
-      "Notification automation",
-      "Email automation",
-      "Business process orchestration",
-    ],
+  automationCapabilities: [
+    "Employee onboarding workflow automation",
+    "Role-based task generation",
+    "Task assignment",
+    "Due-date management",
+    "Automated reminders",
+    "Overdue task detection",
+    "Escalation workflows",
+    "Onboarding status tracking",
+    "Cross-team workflow coordination"
+  ],
 
-    engineeringChallenges: [
-      "Connecting multiple Microsoft 365 services",
-      "Designing reliable event-driven workflows",
-      "Managing information handoffs between applications",
-      "Handling automated notifications and email communication",
-      "Building workflows that require minimal manual intervention",
-    ],
+  engineeringChallenges: [
+    "Designing a reliable workflow across HR, IT and management teams",
+    "Creating reusable role-based onboarding task templates",
+    "Maintaining consistent employee and task relationships",
+    "Handling task due dates and completion states",
+    "Designing reminder and escalation conditions",
+    "Preventing duplicate onboarding task creation",
+    "Maintaining centralized visibility of onboarding progress"
+  ],
 
-    outcome:
-      "Automated recurring business workflows across Microsoft 365 services, reducing manual handoffs for notifications, email communication and cross-application processes.",
+  outcome:
+    "Created a centralized and repeatable onboarding workflow that automatically coordinates employee onboarding activities across HR, IT and management.",
 
-    impact:
-      "Established repeatable event-driven workflows that allow business processes to move automatically from one application or stage to the next.",
+  impact:
+    "Reduced manual coordination involved in onboarding and provided HR with centralized visibility into task ownership, pending activities and overall onboarding progress.",
 
-    role:
-      "Designed and implemented Power Automate workflows and integrations connecting Microsoft 365 services and business processes.",
+  role:
+    "Designed and implemented the end-to-end onboarding workflow, including the SharePoint data structure, Power Automate flows, role-based task creation, notifications, reminders and escalation logic.",
 
-    keyLearning:
-      "Developed practical experience in low-code enterprise automation, event-driven workflows, Microsoft 365 integrations and business process orchestration.",
-  },
+  keyLearning:
+    "Gained practical experience designing multi-step business workflows, event-driven automation, SharePoint-based data models, scheduled workflows, task orchestration and exception handling."
+},
 
-  {
-    slug: "phishing-awareness-automation",
-    title: "Phishing Awareness & Notification Automation",
-    category: "Enterprise Automation",
-    status: "PROFESSIONAL",
+{
+  slug: "phishing-awareness-automation",
+  title: "Phishing Awareness & Activity Tracking Automation",
+  category: "Enterprise Automation",
+  status: "PROFESSIONAL",
 
-    summary:
-      "Internal automation for phishing-awareness exercises, organization-wide notifications, acknowledgement tracking and document workflows.",
+  summary:
+    "An internal phishing-awareness automation system that sends simulated phishing communications and records user interactions for security-awareness analysis.",
 
-    problem:
-      "Security-awareness exercises required tracking notifications, user acknowledgements and follow-up actions across the organization. These activities involved repetitive communication and status-tracking work.",
+  problem:
+    "Running phishing-awareness exercises required sending simulated phishing communications and tracking how users interacted with them. Manually collecting and maintaining this activity information made it difficult to consistently monitor participation and user responses.",
 
-    solution:
-      "Built internal automation to support phishing-awareness tracking, organization-wide notification workflows, acknowledgement tracking and related document-processing activities.",
+  solution:
+    "Built an internal Python-based automation system that supports phishing-awareness exercises by handling notification workflows, tracking user interactions and storing activity data in a database for later analysis and reporting.",
 
-    architecture: [
-      {
-        label: "Awareness Exercise Trigger",
-        detail: "Initiates the exercise workflow",
-      },
-      {
-        label: "Notification Workflow",
-        detail: "Sends organization-wide communications",
-      },
-      {
-        label: "User Interaction",
-        detail: "Tracks acknowledgement or response",
-      },
-      {
-        label: "Status Tracking",
-        detail: "Maintains acknowledgement and follow-up state",
-      },
-      {
-        label: "Automated Follow-up",
-        detail: "Handles pending actions",
-      },
-      {
-        label: "Document Processing",
-        detail: "Automates related document workflows",
-      },
-    ],
+  architecture: [
+    {
+      label: "Phishing Awareness Campaign",
+      detail: "Initiates the simulated phishing exercise",
+    },
+    {
+      label: "Email Notification",
+      detail: "Delivers simulated phishing communications",
+    },
+    {
+      label: "User Interaction",
+      detail: "Captures relevant user activity",
+    },
+    {
+      label: "Activity Tracking",
+      detail: "Processes interaction events",
+    },
+    {
+      label: "Database",
+      detail: "Persists user activity and campaign data",
+    },
+    {
+      label: "Activity Analysis",
+      detail: "Provides data for awareness monitoring and reporting",
+    },
+  ],
 
-    technologies: [
-      "Python",
-      "Email Automation",
-      "Power Automate",
-      "Microsoft 365",
-    ],
+  technologies: [
+    "Python",
+    "SQL",
+    "Database",
+    "Email Automation",
+  ],
 
-    automationCapabilities: [
-      "Security-awareness tracking",
-      "Organization-wide notifications",
-      "Email automation",
-      "Acknowledgement tracking",
-      "Automated follow-up",
-      "Document processing",
-    ],
+  automationCapabilities: [
+    "Phishing-awareness campaign automation",
+    "Email notification automation",
+    "User activity tracking",
+    "Event-based activity recording",
+    "Database persistence",
+    "Activity monitoring",
+    "Security-awareness reporting",
+  ],
 
-    engineeringChallenges: [
-      "Managing organization-wide notification workflows",
-      "Tracking individual acknowledgement states",
-      "Handling follow-up actions based on user responses",
-      "Connecting notification and tracking workflows",
-      "Automating repetitive security-awareness administration",
-    ],
+  engineeringChallenges: [
+    "Designing reliable tracking for user interactions",
+    "Capturing activity events without disrupting the user experience",
+    "Associating activity with the appropriate user and campaign",
+    "Persisting interaction data consistently in the database",
+    "Handling multiple activity events during an awareness campaign",
+    "Structuring stored data for later analysis and reporting",
+  ],
 
-    outcome:
-      "Automated key administrative workflows associated with phishing-awareness exercises, including notifications, acknowledgement tracking and follow-up processing.",
+  outcome:
+    "Automated the core phishing-awareness workflow and established a centralized database-driven system for recording and monitoring user interaction data.",
 
-    impact:
-      "Provided a repeatable process for running awareness workflows and maintaining visibility into notification and acknowledgement status.",
+  impact:
+    "Replaced manual activity collection with a repeatable automated tracking process, providing a structured source of data for evaluating phishing-awareness exercises.",
 
-    role:
-      "Developed automation for notification delivery, acknowledgement tracking and related document-processing workflows.",
+  role:
+    "Designed and developed the Python automation, implemented the notification and activity-tracking workflow, and integrated database persistence for campaign and user interaction data.",
 
-    keyLearning:
-      "Gained practical experience in organization-wide communication automation, state tracking, workflow design and security-awareness process automation.",
-  },
+  keyLearning:
+    "Gained practical experience in event tracking, database-backed automation, email workflows and designing systems for security-awareness activities."
+},
+
+
 
   {
     slug: "blazor-to-nextjs-modernization",

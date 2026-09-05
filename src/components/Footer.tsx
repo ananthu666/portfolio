@@ -12,3 +12,4 @@ export default function Footer() {
     </footer>
   );
 }
+like, the number of people that are in the room, and I think that that is a very valid point.

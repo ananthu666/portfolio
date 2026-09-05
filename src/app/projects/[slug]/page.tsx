@@ -197,8 +197,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 ))}
               </dl>
             </div>
-          )}
+                    )}
         </Section>
+
+        {project.keyLearning && (
+          <Section number="08" title="Key Learning">
+            <p className="text-ink-200">{project.keyLearning}</p>
+          </Section>
+        )}
       </main>
       <Footer />
     </>

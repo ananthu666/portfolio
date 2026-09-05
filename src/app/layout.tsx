@@ -6,7 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import EasterEgg from "@/components/EasterEgg";
 import CommandPalette from "@/components/CommandPalette";
 
-const siteUrl = "https://ananthujayakumar.dev"; // TODO: replace with your real domain
+const siteUrl = "https://portfolio-opal-mu-19.vercel.app"; // TODO: swap to your custom domain if you add one// TODO: replace with your real domain
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

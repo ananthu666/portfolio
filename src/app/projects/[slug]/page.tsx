@@ -162,8 +162,27 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </Section>
         )}
 
+                {project.engineeringChallenges && (
+          <Section number="06.5" title="Engineering Challenges">
+            <ul className="list-inside list-disc space-y-1 text-ink-200">
+              {project.engineeringChallenges.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </Section>
+        )}
+
+        {project.role && (
+          <Section number="06.6" title="My Role">
+            <p className="text-ink-200">{project.role}</p>
+          </Section>
+        )}
+
         <Section number="07" title="Result">
           <p className="text-ink-200">{project.outcome}</p>
+          {project.impact && (
+            <p className="mt-3 border-l-2 border-signal-ai/40 pl-4 text-ink-200">{project.impact}</p>
+          )}
           {project.exampleReadout && (
             <div className="mt-5 rounded-lg border border-ink-700 bg-ink-850/50 p-5 font-mono text-sm">
               {project.isDemoData && (

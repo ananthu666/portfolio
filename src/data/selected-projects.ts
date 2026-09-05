@@ -43,7 +43,7 @@ export const selectedProjects: Project[] = [
     ],
 
     automationCapabilities: [
-      "Candidate discovery workflow",
+      "Candidate discovery workflow", 
       "Multi-stage agent orchestration",
       "Automated screening pipeline",
       "Sourcing-to-outreach workflow",

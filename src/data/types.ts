@@ -21,6 +21,10 @@ export type Project = {
   technologies: string[];
   aiCapabilities?: string[];
   automationCapabilities?: string[];
+  engineeringChallenges?: string[];
+  impact?: string;
+  role?: string;
+  keyLearning?: string;
   outcome: string;
   github?: string;
   demo?: string;

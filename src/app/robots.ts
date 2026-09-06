@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const siteUrl = "https://portfolio-opal-mu-19.vercel.app"; // TODO: swap to your custom domain if you add one
+const siteUrl = "https://ananthu-jayakumar.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {

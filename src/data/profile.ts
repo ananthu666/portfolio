@@ -3,10 +3,13 @@ export const profile = {
   firstName: "Ananthu",
   lastName: "Jayakumar",
   title: "AI Engineer",
+  subtitle: "Enterprise Automation",
   resumeTitle: "AI & Software Engineer",
-  tagline: "AI × Odoo × Automation",
+  tagline: "AI × ERP × Automation",
   heroStatement:
-    "Building intelligent systems where AI, ERP, automation, APIs and enterprise data come together.",
+    "Building AI-powered enterprise systems that connect ERP, APIs, business data and automation.",
+  odooExploration:
+    "Exploring Odoo as an ERP platform through internal learning, AI experiments and business-focused POCs.",
   positioning:
     "I build systems where AI, ERP, automation, APIs and business data come together.",
   positioningLong:

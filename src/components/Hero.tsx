@@ -37,7 +37,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 font-display text-xl text-ink-200 md:text-2xl"
           >
-            {profile.title}
+            {profile.title} <span className="text-ink-500">|</span> {profile.subtitle}
           </motion.p>
 
           <motion.p
@@ -48,7 +48,14 @@ export default function Hero() {
           >
             {profile.heroStatement}
           </motion.p>
-
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-3 max-w-md text-sm text-ink-500"
+          >
+            {profile.odooExploration}
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

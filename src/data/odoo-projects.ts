@@ -1,32 +1,34 @@
 import { Project } from "./types";
 
-// Independent engineering lab — NOT professional / client work. Every metric
-// here is synthetic demo data unless explicitly stated otherwise.
+// Odoo AI & ERP Innovation Lab — internal learning / POC initiative.
+// These are self-directed POCs built to explore Odoo business workflows,
+// AI, analytics and enterprise automation. They are NOT client implementations.
+// Every metric/example here is synthetic demo data unless explicitly stated otherwise.
 export const odooProjects: Project[] = [
   {
     slug: "ai-sales-intelligence",
     title: "AI-Powered Sales Intelligence",
-    category: "Odoo Lab",
+    category: "Odoo Lab — Internal Learning & POC",
     status: "INDEPENDENT PROJECT",
     summary:
-      "Reads Odoo CRM opportunity data and generates lead scores, next-best-action suggestions and lost-opportunity analysis.",
+      "Analyzes Odoo CRM opportunities to help sales teams prioritize active deals, decide the next action and understand patterns in lost opportunities.",
     problem:
-      "Odoo CRM stores rich opportunity data — engagement, quotations, contact history — but a rep still has to manually judge which leads deserve attention today.",
+      "A sales team may have many active opportunities at different stages. Reviewing engagement, quotation activity and contact history manually makes it difficult to quickly identify which deals deserve attention and why previous opportunities were lost.",
     solution:
-      "A Python service pulls opportunity records from Odoo CRM, computes an engagement-weighted score, and asks an LLM to explain the score in plain language with a recommended next action — kept separate so the scoring stays deterministic and the explanation stays natural-language.",
+      "A Python service extracts opportunity data from Odoo CRM and computes a deterministic engagement score using factors such as activity and quotation status. An LLM then explains the result in plain language, recommends a next action and summarizes lost-opportunity patterns. The business score remains deterministic while AI is used for reasoning and communication.",
     architecture: [
-      { label: "Odoo CRM", detail: "Source of opportunity data" },
+      { label: "Odoo CRM", detail: "Sales opportunity data" },
       { label: "Sales data extraction" },
       { label: "Python scoring model", detail: "Deterministic engagement score" },
       { label: "AI analysis", detail: "Natural-language explanation" },
-      { label: "Lead scoring & next-best-action" },
+      { label: "Priority & next-best-action" },
       { label: "Sales dashboard" },
     ],
     technologies: ["Python", "Odoo ORM", "Odoo XML-RPC API", "LLM API"],
     aiCapabilities: [
-      "AI-generated opportunity summaries",
+      "Opportunity summaries",
       "Next-action recommendations",
-      "Lost-opportunity analysis",
+      "Lost-opportunity pattern analysis",
       "Sales trend explanation",
     ],
     odooModules: ["CRM"],
@@ -41,19 +43,19 @@ export const odooProjects: Project[] = [
     ],
     isDemoData: true,
     outcome:
-      "Working prototype against a local Odoo CRM instance with synthetic lead data — not deployed to a production business.",
+      "Working prototype against a local Odoo CRM instance with synthetic opportunity data. Demonstrates how AI can support sales prioritization without replacing deterministic business scoring.",
   },
   {
     slug: "odoo-ai-support-agent",
     title: "Odoo AI Support Agent",
-    category: "Odoo Lab",
+    category: "Odoo Lab — Internal Learning & POC",
     status: "INDEPENDENT PROJECT",
     summary:
-      "Classifies incoming Odoo Helpdesk tickets, retrieves relevant knowledge, and drafts a suggested response for a human to approve.",
+      "Helps support teams triage Odoo Helpdesk tickets, retrieve relevant knowledge and prepare suggested responses for human approval.",
     problem:
-      "Support tickets need triage — priority, category, likely resolution — before a human can act, and drafting a first response from scratch is repetitive for common issues.",
+      "Support teams receive many customer issues that must be categorized, prioritized and researched before someone can respond. For common problems, repeatedly searching knowledge-base content and writing the first response is time-consuming.",
     solution:
-      "Tickets flow from Odoo Helpdesk into a classification step, then a retrieval-augmented step pulls relevant knowledge-base articles, and an AI agent drafts a suggested reply. Nothing is sent to the customer without human approval.",
+      "Tickets flow from Odoo Helpdesk into classification and priority detection. RAG retrieves relevant knowledge-base content, and an AI agent uses that context to draft a suggested response. A human reviews and approves the response before anything is sent to the customer.",
     architecture: [
       { label: "Customer ticket" },
       { label: "Odoo Helpdesk" },
@@ -82,19 +84,19 @@ export const odooProjects: Project[] = [
     ],
     isDemoData: true,
     outcome:
-      "Working prototype with a human-in-the-loop approval step — AI never sends a reply automatically.",
+      "Working prototype demonstrating AI-assisted support triage and response drafting with a human-in-the-loop approval step. AI never sends a reply automatically.",
   },
   {
     slug: "odoo-inventory-intelligence",
     title: "Odoo Inventory Intelligence",
-    category: "Odoo Lab",
+    category: "Odoo Lab — Internal Learning & POC",
     status: "INDEPENDENT PROJECT",
     summary:
-      "Statistical forecasting over Odoo Inventory data to flag stock-out risk, overstock and unusual consumption, explained in plain language.",
+      "Analyzes Odoo Inventory history to identify stock-out risk, overstock and unusual consumption before they become operational problems.",
     problem:
-      "Odoo Inventory shows current stock, but spotting stock-out risk or slow-moving products before they become a problem takes manual review of usage trends.",
+      "Current stock levels show what is available now, but managers also need to understand consumption trends. Identifying products that may run out, remain overstocked or suddenly change consumption can require manual analysis of historical stock movements.",
     solution:
-      "A Python job extracts stock-move history from Odoo, runs a statistical forecast (moving average + trend) to project stock-out dates and flag anomalies, then uses AI only to explain the numbers in plain language for a manager — the forecast itself stays deterministic.",
+      "A Python job extracts stock-move history from Odoo and applies deterministic statistical analysis such as moving averages and trends to estimate stock-out timing and detect unusual consumption. AI is used only to explain the findings and recommendations in manager-friendly language.",
     architecture: [
       { label: "Odoo Inventory" },
       { label: "Data extraction", detail: "Stock-move history" },
@@ -116,39 +118,39 @@ export const odooProjects: Project[] = [
       { label: "Recommendation", value: "Review replenishment quantity" },
     ],
     isDemoData: true,
-    outcome: "Forecasting logic validated against synthetic stock-movement datasets.",
+    outcome: "Forecasting and anomaly-detection logic validated against synthetic stock-movement datasets; the POC demonstrates how inventory data can support proactive operational decisions.",
   },
   {
     slug: "odoo-integration-hub",
     title: "Odoo Enterprise Integration Hub",
-    category: "Odoo Lab",
+    category: "Odoo Lab — Internal Learning & POC",
     status: "IN PROGRESS",
     summary:
-      "A gateway connecting Odoo to REST APIs, an external database and SharePoint, with retry handling, validation and a live sync monitor.",
+      "A bidirectional integration hub that synchronizes Odoo with REST APIs, external databases and SharePoint while centralizing validation, transformation, retries and monitoring.",
     problem:
-      "Odoo needs to stay in sync with systems outside it — REST services, a separate database, SharePoint document stores — reliably, with visibility when something fails.",
+      "Organizations often run Odoo alongside other business systems. Data may need to move both into Odoo and back out to external APIs, databases or SharePoint. Multiple point-to-point integrations can become difficult to maintain, secure and monitor when failures occur.",
     solution:
-      "An API gateway sits in front of Odoo and routes data through a Python integration layer that validates, transforms and retries failed calls to each downstream system, with a monitoring dashboard showing sync health.",
+      "A centralized Python integration hub sits between Odoo and external systems. It supports data flowing in both directions, validates and transforms payloads, handles authentication, retries failed operations, logs errors and exposes synchronization health through monitoring.",
     architecture: [
       { label: "Odoo" },
-      { label: "API gateway" },
-      { label: "Python integration layer" },
-      { label: "REST / Database / SharePoint", detail: "Parallel sync targets" },
-      { label: "Data transform" },
-      { label: "External system" },
+      { label: "API gateway / Integration hub", detail: "Central entry and routing layer" },
+      { label: "Python integration layer", detail: "Validation, transformation and orchestration" },
+      { label: "External systems", detail: "REST APIs / Database / SharePoint" },
+      { label: "Bidirectional synchronization", detail: "Inbound and outbound data flows" },
+      { label: "Monitoring & recovery", detail: "Logging, retries and sync health" },
     ],
     technologies: ["Python", "REST APIs", "SharePoint API", "SQL", "Webhooks"],
     automationCapabilities: [
-      "API integrations",
+      "Bidirectional API integrations",
       "Authentication",
       "Data transformation & validation",
-      "Retry mechanism",
+      "Retry and recovery",
       "Error handling & logging",
-      "Scheduled synchronization",
+      "Scheduled / event-driven synchronization",
     ],
     odooModules: ["Base / external API layer"],
     integrationPoints: ["REST", "Database", "SharePoint"],
-    businessWorkflow: ["Extract", "Validate", "Transform", "Sync", "Monitor"],
+    businessWorkflow: ["Receive / Extract", "Validate", "Transform", "Sync", "Monitor", "Retry / Recover"],
     exampleReadout: [
       { label: "Odoo → API", value: "SUCCESS" },
       { label: "Odoo → Database", value: "SUCCESS" },
@@ -158,19 +160,19 @@ export const odooProjects: Project[] = [
       { label: "Failed", value: "18 (demo data)" },
     ],
     isDemoData: true,
-    outcome: "Core gateway and retry logic built; SharePoint sync path still being hardened.",
+    outcome: "Core bidirectional gateway, validation, transformation and retry concepts prototyped; SharePoint synchronization is still being hardened.",
   },
   {
     slug: "manufacturing-procurement-assistant",
     title: "Intelligent Manufacturing & Procurement Assistant",
-    category: "Odoo Lab",
+    category: "Odoo Lab — Internal Learning & POC",
     status: "EXPERIMENT",
     summary:
-      "Cross-references Odoo sales demand, inventory and supplier lead time to recommend purchase quantities, with AI used for the explanation only.",
+      "Connects Odoo sales demand, manufacturing requirements, inventory and supplier lead time to identify material shortages and recommend what procurement should review.",
     problem:
-      "Deciding how much of a material to purchase means weighing expected usage, current stock, open purchase orders and supplier lead time together — easy to get wrong doing it by hand.",
+      "A manufacturing company must buy enough raw material to support upcoming production without creating unnecessary excess stock. Procurement decisions require combining sales demand, material requirements, current inventory, open purchase orders, consumption rate and supplier lead time.",
     solution:
-      "A Python calculation combines demand forecast, current stock, open POs and lead time into a recommended purchase quantity; an AI layer explains the recommendation and flags risk, with a human required to approve the purchase order in Odoo.",
+      "Python combines demand, manufacturing material requirements, current stock, consumption and open purchase orders with supplier lead time to calculate a deterministic purchase recommendation and identify shortage risk. AI explains the recommendation and risk in plain language, while a human remains responsible for approving the purchase order in Odoo.",
     architecture: [
       { label: "Sales" },
       { label: "Demand" },
@@ -186,10 +188,13 @@ export const odooProjects: Project[] = [
     integrationPoints: ["Odoo MRP API", "Odoo Purchase API"],
     aiComponents: ["Explanation & risk-flagging layer — quantity math is deterministic"],
     businessWorkflow: [
-      "Business data",
-      "AI analysis",
+      "Sales demand",
+      "Manufacturing requirements",
+      "Inventory check",
+      "Existing purchase orders",
+      "Supplier lead time",
       "Risk detection",
-      "Procurement recommendation",
+      "Purchase recommendation",
       "Human approval",
       "Odoo purchase order",
     ],
@@ -202,6 +207,6 @@ export const odooProjects: Project[] = [
       { label: "Recommendation", value: "Review purchase of ~500 kg" },
     ],
     isDemoData: true,
-    outcome: "Early-stage experiment — calculation logic prototyped, not yet integrated end-to-end.",
+    outcome: "Early-stage experiment — deterministic calculation logic is prototyped. The concept is designed to connect sales, manufacturing, inventory and procurement decisions, but it is not yet integrated end-to-end.",
   },
 ];
